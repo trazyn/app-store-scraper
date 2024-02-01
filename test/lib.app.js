@@ -163,4 +163,12 @@ describe('App method', () => {
       })
       .catch(done);
   });
+
+  it('fetch valid application data and events', () => {
+    return store.app({id: '1160056295', events: true})
+      .then((app) => {
+        assert.equal(app.appId, 'com.mobile.legends');
+        assert.isNotEmpty(app.events);
+      });
+  });
 });
