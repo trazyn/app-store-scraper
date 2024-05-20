@@ -165,10 +165,11 @@ describe('App method', () => {
   });
 
   it('fetch valid application data and events', () => {
-    return store.app({id: '1160056295', events: true})
+    return store.app({id: '1160056295', metadata: true})
       .then((app) => {
         assert.equal(app.appId, 'com.mobile.legends');
         assert.isNotEmpty(app.events);
+        console.log(app.stories);
       });
   });
 });
