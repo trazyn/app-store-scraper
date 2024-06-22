@@ -168,8 +168,11 @@ describe('App method', () => {
     return store.app({id: '1160056295', metadata: true})
       .then((app) => {
         assert.equal(app.appId, 'com.mobile.legends');
+        // assert.equal(app.appId, 'com.levelinfinite.sgameGlobal');
         assert.isNotEmpty(app.events);
-        console.log(app.stories);
+        console.log('Got stories:\n', app.stories);
+        console.log('Got video:\n', app.previewVideo);
+        console.log('Got artwork:\n', app.artwork);
       });
   });
 });
